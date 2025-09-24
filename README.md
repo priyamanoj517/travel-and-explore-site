@@ -1,8 +1,8 @@
- Eco-Friendly Sustainable Travel Planner
+# Eco-Friendly Sustainable Travel Planner
 
 A web application that helps travelers plan sustainable trips by providing eco-friendly accommodation options, sustainable transportation methods, carbon footprint calculations, and environmental impact assessments.
 
- Features
+## Features
 
 - **Sustainable Accommodation Search**: Find eco-friendly hotels and lodgings
 - **Green Transportation Options**: Discover sustainable ways to travel
@@ -12,7 +12,7 @@ A web application that helps travelers plan sustainable trips by providing eco-f
 - **Travel Restrictions**: Stay updated on travel guidelines and requirements
 - **Sustainable Travel Tips**: Learn how to travel more responsibly
 
-Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3 (with Grid and Flexbox)
@@ -20,7 +20,7 @@ Technologies Used
 - Responsive Design
 - Free APIs for weather data
 
- Setup Instructions
+## Setup Instructions
 
 1. Clone this repository
 2. Open `index.html` in your web browser
