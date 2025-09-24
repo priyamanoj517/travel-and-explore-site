@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Sustainable Travel Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Eco-Friendly Sustainable Travel Planner</h1>
+            <p>Plan your next adventure while minimizing your environmental impact</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#accommodation">Accommodation</a></li>
+                <li><a href="#transportation">Transportation</a></li>
+                <li><a href="#carbon-calculator">Carbon Calculator</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#restrictions">Travel Restrictions</a></li>
+                <li><a href="#tips">Travel Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="container">
+        <section class="hero">
+            <h1>Travel Sustainably</h1>
+            <p>Discover eco-friendly accommodations, sustainable transportation options, and calculate your carbon footprint to make your travels more environmentally conscious.</p>
+            <a href="#carbon-calculator" class="hero-btn">Calculate Your Carbon Footprint</a>
+        </section>
+        
+        <!-- Accommodation Section -->
+        <section id="accommodation">
+            <h2>Sustainable Accommodation</h2>
+            <p>Find eco-friendly places to stay that prioritize sustainability through energy efficiency, waste reduction, and local community support.</p>
+            
+            <div class="search-form">
+                <label for="location">Destination:</label>
+                <input type="text" id="location" placeholder="Enter your destination">
+                <button id="search-accommodation">Search</button>
+            </div>
+            
+            <div class="results" id="accommodation-results">
+                <p>Enter a destination to find eco-friendly accommodation options.</p>
+            </div>
+            
+            <div class="filter-section">
+                <h3>Filter Options</h3>
+                <label for="filter-options">Filter by:</label>
+                <select id="filter-options">
+                    <option value="eco-hotels">Eco-Friendly Hotels</option>
+                    <option value="hostels">Sustainable Hostels</option>
+                    <option value="vacation-rentals">Green Vacation Rentals</option>
+                    <option value="all">All Options</option>
+                </select>
+            </div>
+            
+            <div class="user-reviews">
+                <h3>Traveler Reviews</h3>
+                <div id="reviews-container">
+                    <p>Search for accommodations to see traveler reviews.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Transportation Section -->
+        <section id="transportation">
+            <h2>Sustainable Transportation</h2>
+            <p>Explore environmentally friendly ways to get around during your travels.</p>
+            
+            <div class="search-form">
+                <label for="transport-location">Start Location:</label>
+                <input type="text" id="transport-location" placeholder="Enter start location">
+                <button id="search-transportation">Search Options</button>
+            </div>
+            
+            <div class="results" id="transportation-results">
+                <p>Enter a location to find sustainable transportation options.</p>
+            </div>
+            
+            <div class="transport-types">
+                <h3>Transportation Types</h3>
+                <div class="transport-grid">
+                    <div class="transport-card">
+                        <h4>Public Transportation</h4>
+                        <p>Buses, trams, and trains with low emissions</p>
+                    </div>
+                    <div class="transport-card">
+                        <h4>Biking</h4>
+                        <p>Bike-sharing programs and rental services</p>
+                    </div>
+                    <div class="transport-card">
+                        <h4>Electric Vehicles</h4>
+                        <p>EV rentals and charging stations</p>
+                    </div>
+                    <div class="transport-card">
+                        <h4>Carpooling</h4>
+                        <p>Ride-sharing with other travelers</p>
+                    </div>
+                    <div class="transport-card">
+                        <h4>Walking</h4>
+                        <p>Pedestrian-friendly routes and walking tours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Carbon Footprint Calculator -->
+        <section id="carbon-calculator">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <p>Understand the environmental impact of your travel choices and learn how to reduce it.</p>
+            
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="distance">Distance (km):</label>
+                    <input type="number" id="distance" placeholder="Enter distance traveled">
+                </div>
+                
+                <div class="form-group">
+                    <label for="transport-mode">Mode of Transport:</label>
+                    <select id="transport-mode">
+                        <option value="car">Car</option>
+                        <option value="bus">Bus</option>
+                        <option value="train">Train</option>
+                        <option value="plane">Plane</option>
+                        <option value="bike">Bicycle</option>
+                        <option value="walk">Walking</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="accommodation-type">Accommodation Type:</label>
+                    <select id="accommodation-type">
+                        <option value="hotel">Standard Hotel</option>
+                        <option value="eco-hotel">Eco-Friendly Hotel</option>
+                        <option value="hostel">Hostel</option>
+                        <option value="rental">Vacation Rental</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="duration">Trip Duration (days):</label>
+                    <input type="number" id="duration" placeholder="Enter trip duration" min="1">
+                </div>
+                
+                <button id="calculate-footprint">Calculate Footprint</button>
+            </div>
+            
+            <div class="results" id="carbon-results">
+                <p>Your estimated carbon footprint: <span id="footprint-result">-- kg CO2</span></p>
+                <div id="footprint-tips"></div>
+                <div id="carbon-comparison"></div>
+            </div>
+        </section>
+        
+        <!-- Weather Updates -->
+        <section id="weather">
+            <h2>Weather Updates</h2>
+            <p>Check current conditions and forecasts to plan your sustainable activities.</p>
+            
+            <div class="search-form">
+                <label for="city-input">Enter City:</label>
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="get-weather">Get Weather</button>
+            </div>
+            
+            <div class="weather-display" id="weather-container">
+                <div class="loading" id="weather-loading">Loading weather data...</div>
+                <div class="current-weather" id="current-weather">
+                    <h3>Current Conditions</h3>
+                    <div class="weather-info">
+                        <p>Temperature: <span id="temperature">--°C</span></p>
+                        <p>Conditions: <span id="conditions">--</span></p>
+                        <p>Humidity: <span id="humidity">--%</span></p>
+                        <p>Wind Speed: <span id="wind-speed">-- km/h</span></p>
+                    </div>
+                </div>
+                
+                <div class="forecast" id="forecast-container">
+                    <h3>5-Day Forecast</h3>
+                    <div id="forecast-results"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tourist Attractions -->
+        <section id="attractions">
+            <h2>Popular Eco-Friendly Attractions</h2>
+            <p>Discover sustainable tourist destinations that prioritize conservation and community.</p>
+            
+            <div class="search-form">
+                <label for="attraction-city-input">Enter City:</label>
+                <input type="text" id="attraction-city-input" placeholder="Enter city name">
+                <button id="search-attractions">Search Attractions</button>
+            </div>
+            
+            <div class="attractions-grid" id="attractions-list">
+                <div class="loading" id="attractions-loading">Search for a city to see eco-friendly attractions</div>
+            </div>
+        </section>
+        
+        <!-- Travel Restrictions -->
+        <section id="restrictions">
+            <h2>Travel Restrictions & Guidelines</h2>
+            <p>Stay informed about entry requirements and sustainable travel protocols.</p>
+            
+            <div class="search-form">
+                <label for="country-input">Enter Country:</label>
+                <input type="text" id="country-input" placeholder="Enter country name">
+                <button id="search-restrictions">Check Restrictions</button>
+            </div>
+            
+            <div class="restrictions-info" id="restrictions-info">
+                <div class="loading">Enter a country to see travel restrictions</div>
+            </div>
+        </section>
+        
+        <!-- Travel Tips and Resources -->
+        <section id="tips">
+            <h2>Sustainable Travel Tips</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Sustainable Packing</h3>
+                    <p>Reduce waste by packing reusable items like water bottles, shopping bags, and utensils. Choose eco-friendly toiletries and minimize single-use plastics.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Support Local Communities</h3>
+                    <p>Choose locally-owned accommodations, eat at local restaurants, and purchase souvenirs from local artisans to support the economy you're visiting.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Conserve Resources</h3>
+                    <p>Be mindful of your water and energy usage. Reuse towels, turn off lights when not in use, and take shorter showers to reduce your environmental impact.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Choose Eco-Friendly Activities</h3>
+                    <p>Opt for nature walks, wildlife watching with responsible operators, and cultural experiences that respect local traditions and environments.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Eco-Friendly Travel Planner</h3>
+            <p>Helping travelers make sustainable choices since 2024</p>
+            <p>Email:priyamanoj517@gamil.com | Phone: +919994522650</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sustainability Commitment</a>
+            </div>
+            <p>&copy; 2024 Eco-Friendly Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
