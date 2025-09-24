@@ -1,17 +1,17 @@
-// Free API endpoints (using WeatherAPI.com + mock APIs)
+
 const API_ENDPOINTS = {
-    // WeatherAPI current weather
+    
     weather: (city) => `https://api.weatherapi.com/v1/current.json?key=47136d30757e4394b8691513252409&q=${city}&aqi=no`,
 
-    // WeatherAPI forecast (5-day)
+    
     forecast: (city) => `https://api.weatherapi.com/v1/forecast.json?key=47136d30757e4394b8691513252409&q=${city}&days=5&aqi=no&alerts=no`,
 
-    // Using free mock API for demonstration
+    
     attractions: (city) => `https://jsonplaceholder.typicode.com/posts?city=${city}`, // Mock API
     restrictions: (country) => `https://jsonplaceholder.typicode.com/posts?country=${country}` // Mock API
 };
 
-// Fallback data for when APIs are not available
+
 const FALLBACK_DATA = {
     weather: {
         London: { temp: 15, conditions: "Cloudy", humidity: 60, windSpeed: 10 },
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeApp() {
-    // Set up event listeners
+    
     setupEventListeners();
     
-    // Load initial data
+    
     loadInitialData();
 }
 
@@ -60,7 +60,7 @@ function setupEventListeners() {
     document.getElementById('search-attractions').addEventListener('click', searchAttractions);
     document.getElementById('search-restrictions').addEventListener('click', searchRestrictions);
 
-    // Enter key support
+    
     document.getElementById('city-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') getWeatherData();
     });
@@ -131,7 +131,7 @@ function loadAccommodationReviews(location) {
     `;
 }
 
-// ------------------- Transportation -------------------
+
 async function searchTransportation() {
     const location = document.getElementById('transport-location').value.trim();
     
@@ -163,7 +163,7 @@ async function searchTransportation() {
     }
 }
 
-// ------------------- Carbon Calculator -------------------
+
 function calculateCarbonFootprint() {
     const distance = parseFloat(document.getElementById('distance').value);
     const transportMode = document.getElementById('transport-mode').value;
@@ -234,7 +234,7 @@ function calculateCarbonFootprint() {
     document.getElementById('carbon-comparison').innerHTML = comparison;
 }
 
-// ------------------- Weather (WeatherAPI.com) -------------------
+
 async function getWeatherData(city = null) {
     const cityInput = city || document.getElementById('city-input').value.trim();
     
@@ -246,7 +246,7 @@ async function getWeatherData(city = null) {
     showLoading('weather-container');
     
     try {
-        // Fetch current weather
+        
         const response = await fetch(API_ENDPOINTS.weather(cityInput));
         const data = await response.json();
 
@@ -259,7 +259,7 @@ async function getWeatherData(city = null) {
             };
             displayWeatherData(cityInput, weatherData);
 
-            // Fetch 5-day forecast
+            
             const forecastResponse = await fetch(API_ENDPOINTS.forecast(cityInput));
             const forecastData = await forecastResponse.json();
             displayForecast(forecastData.forecast.forecastday);
@@ -300,7 +300,6 @@ function displayForecast(forecastDays) {
     forecastContainer.innerHTML = forecastHTML;
 }
 
-// ------------------- Attractions -------------------
 async function searchAttractions(city = null) {
     const cityInput = city || document.getElementById('attraction-city-input').value.trim();
     
@@ -354,7 +353,7 @@ function displayAttractions(city, attractions) {
     container.innerHTML = attractionsHTML;
 }
 
-// ------------------- Travel Restrictions -------------------
+
 async function searchRestrictions() {
     const country = document.getElementById('country-input').value.trim();
     
@@ -387,7 +386,7 @@ async function searchRestrictions() {
     }
 }
 
-// ------------------- Utilities -------------------
+
 function showLoading(elementId) {
     const element = document.getElementById(elementId);
     element.innerHTML = '<div class="loading">Loading...</div>';
@@ -398,7 +397,7 @@ function showError(elementId, message) {
     element.innerHTML = `<div class="error">${message}</div>`;
 }
 
-// Smooth scrolling for navigation links
+
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -409,5 +408,5 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Initialize the app when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', initializeApp);
